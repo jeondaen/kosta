@@ -1,0 +1,11 @@
+.main {
+	position: absolute;
+	border: 1px solid gray;
+	top: 40%;
+	left: 40%;
+}
+
+.textBlock {
+	border: 1px solid gray;
+	background-color: darkgoldenrod;
+}
