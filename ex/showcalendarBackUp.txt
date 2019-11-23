@@ -1,0 +1,83 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.cal span {
+		border: 1px solid gray;
+	}
+</style>
+</head>
+<body>
+<h2>CALENDAR</h2><br>
+<a href="extradays.do?d=3">3일치 보기</a>
+<a href="extradays.do?d=7">일주일 보기</a>
+<br><br>
+<h3>${pmc.year} 년</h3>
+<h4>${pmc.month + 1} 월</h4>
+
+	<div class="cal">
+	
+	
+	<c:forEach var="i" begin="1" end="${pmc.daysOfMonth + pmc.dayOfFirstWeek-1}">
+	<c:set var="j" value="${i - pmc.dayOfFirstWeek+1}"></c:set>
+	
+		<c:if test="${i < pmc.dayOfFirstWeek}"><span>&nbsp;</span></c:if>
+	
+		<c:if test="${i >= pmc.dayOfFirstWeek}">
+		<c:if test="${j == pmc.date}"><b></c:if>
+		<c:set var="capkey">${pmc.year}-${pmc.month + 1}-${j}</c:set>
+		
+		
+		<span>${j}
+			<span>
+				<c:forEach var="pmc" items="${pmc.cap[capkey]}">
+					${pmc.name}
+				</c:forEach>
+				<!-- <c:out value="${pmc.cap[capkey]}"></c:out> -->
+				
+			</span>
+		</span>							<!-- 날짜 출력 -->
+		
+		
+		
+		<c:if test="${j == pmc.date}"></b></c:if>
+		<!--<c:set var="capkey" value="${pmc.year}-${pmc.month + 1}-${j}"/>-->
+		</c:if>		
+		
+		<c:if test="${i % 7 == 0}"> <br> </c:if>	<!-- 한줄 끊기 -->
+		
+	</c:forEach>
+	
+	</div>
+	
+	<c:forEach var="i" begin="0" end="24">	<!-- 시간 select -->
+	<c:if test="${ i == pmc.hour }"><b></c:if>
+		<c:choose>
+			<c:when test="${i==0}">
+				${i+12} am <br>
+			</c:when>
+			<c:when test="${ i < 12 }">
+				${ i } am <br>
+			</c:when>
+			<c:otherwise>
+				${ i } pm <br>
+			</c:otherwise>
+		</c:choose>
+		
+	<c:if test="${ i == pmc.hour }"></b></c:if>
+	</c:forEach>
+	
+	<!-- 한 주를 나타내기 -->
+	<c:forEach var="l" begin="${pmc.date - (pmc.dayOfDateWeek - 1) }" end="${pmc.date - (pmc.dayOfDateWeek- 1) + 6 }">
+		${l} &nbsp;&nbsp;
+		
+	</c:forEach>
+	
+
+</body>
+</html>
