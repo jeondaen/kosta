@@ -3,12 +3,11 @@
 	window.onkeydown = function(event){
 
 		if(event.keyCode == 115) {
-			
+
 			window.open("kp2.html", "_blank", "width=400, height=300, left=500, top=400");
-			
+
 		}
 
 	}
 
 
-	
