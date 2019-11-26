@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>cardlist</title>
+	<script type="text/javascript" src="cardlist.js"></script>
+</head>
+
+<body>
+
+	<div id="cardplace">
+		<form id="cardlist" action="InsertCarsdList.do">
+			<input id="cardlistbtn" type="button" value="카드 리스트 추가">
+		</form>
+	</div>
+
+	<div id="addbox">
+		<!-- 첫번째 forEach 구간 -->
+		<table>
+			<tr>
+				<td>
+					<!-- 두번째 forEach 구간 -->
+					<form>
+						<input type="text" name="blah" placeholder="내용을 입력하시오.">
+					</form>
+
+					<input type="button" id="cardinsertbtn" value="카드 추가">
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
