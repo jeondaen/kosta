@@ -20,3 +20,6 @@ cardInsertBtn.forEach(function(item) {
 });
 
 // 리팩토링 필요
+
+// 33 줄 name 이 아닌 value 값에 넣어서 form 내부의 값을 전달받아 그것을 그대로 전달할 수 있어야 함
+
