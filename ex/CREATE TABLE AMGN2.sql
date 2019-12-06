@@ -128,9 +128,17 @@ file_num number,
 file_group varchar2(100),
 file_realname varchar2(200),
 file_servername varchar2(300),
+<<<<<<< HEAD
 file_extendname varchar2(100),
 file_uploader varchar2(200),
 file_date date,
 
 constraint filenum_pk primary key(file_num)
+=======
+fILE_extendname varchar2(100),
+file_uploader varchar2(200),
+file_date date,
+
+constraint filenum_pk primary key(filenum)
+>>>>>>> 70c1e1296b0c7b514eb9f1586f11c950fd4b8188
 );      
