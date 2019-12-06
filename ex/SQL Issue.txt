@@ -1,0 +1,10 @@
+board_num, board_name, board_date, board_public
+
+user_board_num, user_num, board_num
+                    8
+--------------------------------------------
+insert all into board values(board_seq.nextval, 'insert all test 1', sysdate, 0) 
+into user_board values(user_board_seq.nextval, 8, board_seq.currval) select 1 from dual;
+
+실행 완료 하지만 후에 마지막 줄 select 를 바꿔 주어야 할듯
+

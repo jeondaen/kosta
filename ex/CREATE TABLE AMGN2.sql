@@ -58,7 +58,6 @@ card_clear number(1) default 0,
 card_order number,          -- CARD 배치 순서
 card_calendar number(1) default 0,
 user_num number,
-label_num number,          -- LABEL 값을 먼저 줘야 하나?
 file_num number,           -- 파일은 생성 될 수도 안될 수도 있음
 cardlist_num number,           -- 이미 존재하는 리스트에 인서트
 board_num number,              -- 이미 존재하는 보드에 인서트
@@ -125,13 +124,13 @@ constraint user_num_fk_alrm foreign key(user_num) references users(user_num) on 
 
 -- FILE
 create table files(
-filenum number,
-filegroup varchar2(100),
-filerealname varchar2(200),
-fileservername varchar2(300),
-extendfilename varchar2(100),
-fileuploader varchar2(200),
-filedate date,
+file_num number,
+file_group varchar2(100),
+file_realname varchar2(200),
+file_servername varchar2(300),
+file_extendname varchar2(100),
+file_uploader varchar2(200),
+file_date date,
 
-constraint filenum_pk primary key(filenum)
+constraint filenum_pk primary key(file_num)
 );      

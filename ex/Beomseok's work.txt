@@ -1,0 +1,14 @@
+/*$(document).on("click", "#cardinsertbtn", function() {
+			var $form = $('<form></form>');
+			$form.attr('action', 'CardAccessForm.do');
+			$form.attr('method', 'post');
+			$form.appendTo('td');
+			
+			var title = $('<input type="text" name="card_name">');
+			var cardlist = $('<input type="hidden" name="cardlist_num" value="1">');
+			var board = $('<input type="hidden" name="board_num" value="1">');
+			var submit = $('<input type="submit" value="입력">');
+
+			$form.append(title).append(cardlist).append(board).append(submit);
+
+	})*/
