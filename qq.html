@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script type="text/javascript">
+      var modal = document.querySelector(".modal");
+      var modalInputReply = document.querySelector("input[name='reply']");
+      var modalInputReplyer = document.querySelector("input[name='replyer']");
+      var modalInputReplyDate = document.querySelector(
+        "input[name='replyDate']"
+      );
+      var modalModBtn = document.getElementById("modalModBtn");
+      var modalRemoveBtn = document.getElementById("modalRemoveBtn");
+      var modalRegisterBtn = document.getElementById("modalRegisterBtn");
+
+      modalRegisterBtn.addEventListener("click", function(e) {
+        let addReply = {
+          reply: modalInputReply.value,
+          replyer: modalInputReplyer.value,
+          bno: bnoValue
+        };
+
+        replyService.add(addReply, function(addCheck) {
+          var str = "";
+          if (addCheck > 0) {
+            showList(1);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">REPLY MODAL</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Reply</label>
+              <input class="form-control" name="reply" value="New Reply!!!" />
+            </div>
+            <div class="form-group">
+              <label>Replyer</label>
+              <input class="form-control" name="replyer" value="replyer" />
+            </div>
+            <div class="form-group">
+              <label>Reply Date</label>
+              <input class="form-control" name="replyDate" value="" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="modalModBtn" type="button" class="btn btn-warning">
+              Modify
+            </button>
+            <button id="modalRemoveBtn" type="button" class="btn btn-danger">
+              Remove
+            </button>
+            <button id="modalRegisterBtn" type="button" class="btn btn-primary">
+              Register
+            </button>
+            <button id="modalCloseBtn" type="button" class="btn btn-default">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 동적태그 이벤트 걸기 -->
+<!-- responseEntity -->
+
+<!-- 날짜가 오늘이라면 시간만! -->

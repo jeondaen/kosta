@@ -1,8 +1,6 @@
-function a(a) {
-  console.log(a);
+var 
+function spacing(k) {
+
 }
 
-window.onload = function() {
-  var k = document.getElementById("k");
-  a(k);
-};
+window.onload = function() {};
