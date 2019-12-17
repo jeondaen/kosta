@@ -25,3 +25,6 @@ alter table label add constraint board_num_fk_label foreign key(board_num) refer
 alter table reply modify reply_regdate date default sysdate;
 -- alarm 컬럼 수정
 alter table alarm modify arlm_date date default sysdate;
+
+
+---zzzssfdasdfs
