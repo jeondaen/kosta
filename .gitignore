@@ -1,2 +1,3 @@
 # git ignore
-.sql
+*.sql
+*.js
