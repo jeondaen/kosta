@@ -8,6 +8,7 @@ user_name varchar2(100) not null,
 user_hp varchar2(200),
 user_email varchar2(300),
 user_message_status varchar2 (400),
+user_regdate date default sysdate,
 
 constraint user_num_pk primary key(user_num)
 );  
@@ -16,10 +17,10 @@ constraint user_num_pk primary key(user_num)
 create table board (
 board_num number,
 board_name varchar2(100) not null,
-board_date date,
+board_date date default sysdate,
 board_public number(1) default 0,
 --board_listnum varchar2(200),                           
---              ---------------------------------------listnum????
+--              ---------------------------------------listnum 은 왜있는지??
 constraint board_num_pk primary key(board_num),
 constraint board_pub_check check(board_public in(1, 0))
 );
@@ -29,6 +30,7 @@ create table user_board (
 user_board_num number,
 user_num number,
 board_num number,
+user_board_regdate date default sysdate,
 
 constraint user_board_num_pk primary key(user_board_num),
 constraint user_num_fk foreign key(user_num) references users(user_num) on delete cascade,
@@ -52,7 +54,7 @@ card_num number,
 card_name varchar2(200),
 card_start_date date,
 card_due_date date,
-card_reg_date date,
+card_reg_date date default sysdate,
 card_content varchar2(400),
 card_clear number(1) default 0,
 card_order number,          -- CARD 배치 순서
@@ -75,18 +77,20 @@ create table label(
 label_num number,
 label_name varchar2(200),
 label_color varchar2(200),
-card_num number,
+card_num number default null,
+board_num number,
 
 constraint label_num_pk primary key(label_num), -- 라벨 넘버와 라벨 이름이 동시에 같아야 기본키 인식
-constraint card_num_fk_label foreign key(card_num) references card(card_num) on delete cascade
+constraint card_num_fk_label foreign key(card_num) references card(card_num) on delete cascade,
+constraint board_num_fk_label foreign key(board_num) references board(board_num) on delete cascade
 );
 
 -- REPLY 생성
 create table reply (
 reply_num number,
-reply_uname varchar2(200), -- USERS 의 유저이름과 링크 해줘야하나?
+reply_uname varchar2(200),
 reply_content varchar2(400),
-reply_regdate date,
+reply_regdate date default sysdate,
 card_num number,
 user_num number,
 
@@ -98,8 +102,8 @@ constraint user_num_fk_reply foreign key(user_num) references users(user_num) on
 -- TAG - MEMBER 즉 태그된 멤버들을 모아놓은 테이블 생성
 create table tagmember(
 tagmember_num number,
-user_num number,    -- 유저테이블의 유저와 링크
-card_num number,    -- 카드테이블의 카드와 링크
+user_num number,   
+card_num number,    
 
 constraint tagmember_num_pk primary key(tagmember_num),
 constraint user_num_fk_tagmember foreign key(user_num) references users(user_num) on delete cascade,
@@ -114,7 +118,7 @@ alrm_type varchar2(50),
 alrm_typenum number,
 alrm_content varchar2(200),
 alrm_url varchar2(200),
-arlm_date date,
+arlm_date date default sysdate,
 user_num number,
 
 constraint alrm_num_pk primary key(alrm_num),
@@ -128,17 +132,22 @@ file_num number,
 file_group varchar2(100),
 file_realname varchar2(200),
 file_servername varchar2(300),
-<<<<<<< HEAD
 file_extendname varchar2(100),
 file_uploader varchar2(200),
-file_date date,
+file_date date default sysdate,
 
 constraint filenum_pk primary key(file_num)
-=======
-fILE_extendname varchar2(100),
-file_uploader varchar2(200),
-file_date date,
-
-constraint filenum_pk primary key(filenum)
->>>>>>> 70c1e1296b0c7b514eb9f1586f11c950fd4b8188
 );      
+
+create table checklist(
+    checklist_num number,
+    checklist_content varchar(500) not null,
+    checklist_check char(1) default '0'
+    checklist_writer varchar(200) not null,
+    checklist_regdate date default sysdate,
+    card_num number,
+
+    constraint checklist_pk primary key(checklist_num),
+    constraint checklist_fk_card foreign key(card_num) references card(card_num),
+    constraint checklist_check_check check(checklist_check in('1', '0'))
+)
