@@ -1,0 +1,17 @@
+UserMapper.xml ---
+유저 탈퇴 쿼리 작성
+유저 조회 쿼리 작성 ( 특정 보드에 있거나 검색기능까지 함께 )
+
+스프링 시큐리티로 인해 테이블 추가하고 xml파일 생성
+
+-- 없는 아이디
+2019-12-19 14:22:47,823 [http-nio-8081-exec-1] INFO  com.agn.security.CustomAccessDeniedHandler(handle:24) - get cause : null
+accessDeniedException.getMessage() : Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'.
+accessDeniedException.getLocalizedMessage() : Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'.
+Access Denied : null
+
+-- 있지만 ROLE 은 없는 아이디
+2019-12-19 14:23:42,256 [http-nio-8081-exec-7] INFO  com.agn.security.CustomAccessDeniedHandler(handle:24) - get cause : null
+accessDeniedException.getMessage() : Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'.
+accessDeniedException.getLocalizedMessage() : Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-CSRF-TOKEN'.
+Access Denied : null

@@ -1,0 +1,8 @@
+-- BOARD ADMIN 제약조건 생성 (아직 안함) ------------------------------------------
+constraint board_admin_fk foreign key(board_admin) references users(user_num)
+
+SearchDTO 사용하여 User조회 정확히 할 필요성 유
+sqlId를 사용하여 search관련 쿼리를 모듈화 시키기
+
+LABEL 에 SYSDATE, UPDATE DATE 추가하기
+ALARM 에 board_num 추가하기

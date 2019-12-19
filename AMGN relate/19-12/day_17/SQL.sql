@@ -31,3 +31,6 @@ alter table board add board_admin number not null;
 
 -- BOARD ADMIN 제약조건 생성 (아직 안함) ------------------------------------------
 constraint board_admin_fk foreign key(board_admin) references users(user_num)
+
+-- REPLY 테이블 update 컬럼 추가
+alter table reply add reply_update Date;
