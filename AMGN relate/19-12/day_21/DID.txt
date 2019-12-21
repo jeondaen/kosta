@@ -1,0 +1,35 @@
+많은 커밋과 충돌로 인한 호현이형 작업량 공중분해
+메인보드 우측 상단의 SETTING BTN 변경 필요
+
+key down 이 제대로 실행되지 않는것은 윈도우 자체에서 버블링이 발생하기 때문이다.
+
+-------- 검색
+검색은 가능하지만 지웠을 경우 아무것도 출력되지 않는 현상이 존재
+그렇기에 검색이 null 이어도 동일하게 유저에 해당하는 모든것을 출력할 수 있어야 한다.
+
+pathVariable 을 조금 손보면 이게 가능하다고 하는데
+map으로 받는 것과 Optional이라는 객체를 받을 수 있는데
+optional 객체는 버전이 높은 경우 해당하는 사항이므로 버전이 낮은 map 을 사용해 보도록 하자.
+
+==================================================================================================================================================================================
+2.Spring 4.1과 Java 8을 사용하고 있다면 Spring MVC에서 @RequestParam, @PathVariable, @RequestHeader, @MatrixVariable에서 지원되는 java.util.Optional을 사용할 수 있습니다 -
+Spring 4.1과 Java 8을 사용하고 있다면 Spring MVC에서 @RequestParam, @PathVariable, @RequestHeader, @MatrixVariable에서 지원되는 java.util.Optional을 사용할 수 있습니다 -
+
+@RequestMapping(value = {"/json/{type}", "/json" }, method = RequestMethod.GET)
+public @ResponseBody TestBean typedTestBean(
+    @PathVariable Optional<String> type,
+    @RequestParam("track") String track) {      
+    if (type.isPresent()) {
+        //type.get() will return type value
+        //corresponds to path "/json/{type}"
+    } else {
+        //corresponds to path "/json"
+    }       
+}
+==============================
+3.@PathVariable 어노테이션을 사용하여 경로 변수의 Map을 삽입 할 수 있다는 것은 잘 알려져 있지 않습니다. 이 기능을 Spring 3.0에서 사용할 수 있는지 또는 나중에 추가했는지는 확실하지 않지만 예제를 해결할 수있는 또 다른 방법이 있습니다.
+
+
+맵으로 해결 하였다.
+------------------------ 검색한 이후 create board 버튼이 없어지는 문제 동재형과 상의 필요
+

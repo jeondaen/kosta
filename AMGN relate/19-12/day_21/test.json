@@ -1,0 +1,150 @@
+{
+  "card": [
+    {
+      "card_num": 1,
+      "card_name": "회원가입",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 1,
+      "boar_num": 0
+    },
+    {
+      "card_num": 2,
+      "card_name": "로그인",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 1,
+      "boar_num": 0
+    },
+    {
+      "card_num": 3,
+      "card_name": "마이페이지",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 1,
+      "boar_num": 0
+    },
+    {
+      "card_num": 4,
+      "card_name": "개인 설정",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 1,
+      "boar_num": 0
+    },
+    {
+      "card_num": 5,
+      "card_name": "보드 CRUD",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 2,
+      "boar_num": 0
+    },
+    {
+      "card_num": 6,
+      "card_name": "보드 with user",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 2,
+      "boar_num": 0
+    },
+    {
+      "card_num": 7,
+      "card_name": "보드 with card",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 2,
+      "boar_num": 0
+    },
+    {
+      "card_num": 8,
+      "card_name": "보드 with ui",
+      "card_start_date": null,
+      "card_due_date": null,
+      "card_reg_date": 1576914274000,
+      "card_content": null,
+      "card_clear": false,
+      "card_order": 0,
+      "card_calendar": false,
+      "user_num": 2,
+      "file_num": 0,
+      "cardlist_num": 2,
+      "boar_num": 0
+    }
+  ],
+  "cl": [
+    {
+      "cardlist_num": 1,
+      "cardlist_name": "user",
+      "cardlist_order": 1,
+      "board_num": 16
+    },
+    {
+      "cardlist_num": 2,
+      "cardlist_name": "board",
+      "cardlist_order": 2,
+      "board_num": 16
+    },
+    {
+      "cardlist_num": 3,
+      "cardlist_name": "card",
+      "cardlist_order": 3,
+      "board_num": 16
+    },
+    {
+      "cardlist_num": 4,
+      "cardlist_name": "cardlist",
+      "cardlist_order": 4,
+      "board_num": 16
+    }
+  ]
+}

@@ -6,3 +6,5 @@ sqlId를 사용하여 search관련 쿼리를 모듈화 시키기
 
 LABEL 에 SYSDATE, UPDATE DATE 추가하기
 ALARM 에 board_num 추가하기
+
+Session 을 좀더 명확하게 다룰 필요가 있음
