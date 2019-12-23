@@ -1,0 +1,29 @@
+<select id="listCardList"
+		resultType="com.agn.domain.CardListDTO" resultMap="loadCards">
+		select * from cardlist
+		order by cardlist_order
+	</select>
+	
+	<resultMap type="com.agn.domain.CardListDTO" id="loadCards">
+		<!-- <result property="cardlist_num" column="cardlist_num"/>
+		<result property="cardlist_name" column="cardlist_name"/>
+		<result property="cardlist_order" column="cardlist_order"/>
+		<result property="board_num" column="board_num"/> -->
+		<collection column="board_num" property="cards" javaType="java.util.ArrayList" ofType="com.agn.domain.CardDTO" select="listCard"></collection>
+	</resultMap>
+
+-- resultMap 으로 변경 후 리스트 작업을 시작.
+
+
+	<resultMap type="com.agn.domain.CardListDTO" id="loadCards">
+		 <result property="cardlist_num" column="cardlist_num"/>
+		<result property="cardlist_name" column="cardlist_name"/>
+		<result property="cardlist_order" column="cardlist_order"/>
+		<result property="board_num" column="board_num"/> 
+		<collection column="cardlist_num" property="cards" javaType="java.util.ArrayList" ofType="com.agn.domain.CardDTO" select="listCards"></collection>
+	</resultMap>
+	
+	<select id="listCards" resultType="com.agn.domain.CardDTO">
+		SELECT * FROM card
+		WHERE cardlist_num = #{cardlist_num}
+	</select>

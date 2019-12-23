@@ -1,0 +1,5 @@
+---> 해결방안
+--cmd
+netstat -a -n -o -p tcp
+사용하고 있는 포트 확인 후
+taskkill /f /pid 포트번호
