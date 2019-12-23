@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DRAG & DROP</title>
+</head>
+<script type="text/javascript">
+
+window.onload = function() {
+    var grandChild = document.getElementById("grandChild");
+    var mouseStatus = false;
+
+    grandChild.addEventListener("mousedown", function(event) {
+        this.draggable = true;
+        mouseStatus = true;
+    })
+
+    grandChild.addEventListener("drag", function(event) {
+        console.log(event.x);
+    })
+}
+
+function mouseMove (target, event) {
+    target.onmousemove = function () {
+        console.log(event.x);
+    }
+}
+
+</script>
+<style type="text/css">
+
+div {
+    border: 1px solid black;
+    margin : 10px;
+}
+
+</style>
+<body>
+    <div id="parent">
+parent
+        <div id="child">
+            child
+            <div id="grandChild">
+                grand child
+            </div>
+        </div>
+    </div>    
+
+    <div id="drag">
+        to drag
+    </div>
+</body>
+</html>

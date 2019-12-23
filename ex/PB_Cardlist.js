@@ -12,9 +12,7 @@ card_insertBtn.click(function() {
 
   btn_parent.append(newInsert);
 });
-
+card_insertBtn.onmouse
 card_insertBtn.addEventListener("mouseover");
 
 // -------------- 생성자 함수 생성후 addingInstant에 입력
-
-d;
