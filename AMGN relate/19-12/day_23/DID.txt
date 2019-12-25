@@ -1,6 +1,6 @@
 <select id="listCardList"
 		resultType="com.agn.domain.CardListDTO" resultMap="loadCards">
-		select * from cardlist
+		select cardlist_num, cardlist_name from cardlist
 		order by cardlist_order
 	</select>
 	
