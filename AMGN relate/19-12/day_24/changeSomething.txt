@@ -1,0 +1,23 @@
+ar reply_box = document.createElement("div");
+    var title = document.createElement("div");
+
+    reply_box.append(title);
+    title.innerHTML = elem.reply_uname;
+
+    var content = document.createElement("div");
+    content.innerHTML = elem.reply_content;
+    reply_box.append(content);
+
+    var modbtn = document.createElement("button");
+    modbtn.setAttribute("class", "modReply");
+    modbtn.setAttribute("id", "mod-" + elem.reply_num);
+    modbtn.innerHTML = "수정";
+
+    reply_box.append(modbtn);
+
+    var delbtn = document.createElement("button");
+    delbtn.setAttribute("class", "delReply");
+    delbtn.setAttribute("id", "del-" + elem.reply_num);
+    delbtn.innerHTML = "삭제";
+
+    reply_box.append(delbtn);
