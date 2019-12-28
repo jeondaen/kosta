@@ -6,14 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
+  <!-- Entire bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
   <script>
-    var i = [1, 2, 3];
-    function s(a, b, c) {
-      console.log("a : " + a);
-      console.log("b : " + b);
-      console.log("c : " + c);
-    }
-    s(2, 3);
+    var a = document.getElementById("a");
+    var b = document.getElementById("b");
+    var c = document.getElementById("c");
+
+    var k = new DraggableEvent();
   </script>
-  <body></body>
+  <style type="text/css">
+    div {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 15px;
+    }
+  </style>
+  <body>
+    <div id="a">
+      kk
+    </div>
+    <div id="b">
+      bb
+    </div>
+    <div id="c">
+      cc
+    </div>
+  </body>
 </html>
