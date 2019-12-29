@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>sortable demo</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <style>
+    .card-body {
+      float: left;
+    }
+  </style>
+  <body>
+    <div class="card-body">
+      <div class="card-text">
+        회원가입<input type="hidden" class="cardNum" name="1" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="1" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+      <div class="card-text">
+        로그인<input type="hidden" class="cardNum" name="2" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="2" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+      <div class="card-text">
+        마이페이지<input type="hidden" class="cardNum" name="3" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="3" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+      <div class="card-text">
+        개인 설정<input type="hidden" class="cardNum" name="4" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="4" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-text">
+        회원가입<input type="hidden" class="cardNum" name="1" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="1" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+      <div class="card-text">
+        로그인<input type="hidden" class="cardNum" name="2" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="2" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+      <div class="card-text">
+        마이페이지<input type="hidden" class="cardNum" name="3" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="3" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+      <div class="card-text">
+        개인 설정<input type="hidden" class="cardNum" name="4" /><input
+          type="hidden"
+          class="cardListNum"
+          name="1"
+        /><input type="hidden" class="cardNum" name="4" /><input
+          type="hidden"
+          class="boardNum"
+          name="16"
+        />
+      </div>
+    </div>
+
+    <script>
+      window.onload = function() {
+        let a = document.createElement("div");
+        a.className = "card-body";
+
+        let b = document.createElement("div");
+        b.className = "card-text";
+        b.innerHTML = "동적태그";
+
+        a.append(b);
+
+        let c = document.querySelector("body");
+        c.append(a);
+
+        $(".card-body").sortable({
+          connectWith: ".card-body",
+          cursor: "pointer",
+          update: function(event, ui) {}
+        });
+      };
+
+      $(".card-body").on("mousedown", ".card-text", function(e) {
+        console.log("move");
+        $(this).sortable();
+      });
+    </script>
+  </body>
+</html>
+
+<!--
+  
+ const slider = document.querySelector('.paCardCanvas');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener('mousedown', function(e) {
+         isDown = true;
+         startX = e.pageX - slider.offsetLeft;
+         scrollLeft = slider.scrollLeft;
+         return false;
+      });
+
+      slider.addEventListener('mouseup', function() {
+         isDown = false;
+      });
+      slider.addEventListener('mousemove', function(e) {
+         if (!isDown)
+            return;
+         e.preventDefault();
+         
+         const x = e.pageX - slider.offsetLeft;
+         const walk = (x - startX) * 1.5; // scroll-fast
+         slider.scrollLeft = scrollLeft - walk;
+         return false;
+      });
+
+https://api.jqueryui.com/sortable/#event-update
+-->
