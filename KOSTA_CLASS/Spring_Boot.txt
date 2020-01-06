@@ -1,2 +1,9 @@
 스프링 부트 한다!!!!!!!!!!!!!!!!
 
+boot + JPA
+
+application.properties 에서 서버포트 설정 가능
+
+build.gradle 에서 세팅 할 수 있음
+
+gradle 을 추가하고 나선 Gradle Refresh 를 항상 해주도록 하자
