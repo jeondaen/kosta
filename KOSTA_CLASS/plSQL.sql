@@ -55,4 +55,112 @@ dbms_output.put_line(v_name || ' ' || v_salary || ' ' || v_hireDate);
 
     END;
 
+-- * ROWTYPE - 1개의 로우의 타입을 갖는다.
+DECLARE
+    employees_record employees%ROWTYPE; -- 아주 강력한 기능 - 한개의 로우 전체의 타입을 가질 수 있음
+    v_department_name departments.department_name%TYPE;
 
+BEGIN
+    SELECT * INTO employees_record
+    FROM employees
+    WHERE first_name = 'Lisa';
+
+    SELECT department_name INTO v_department_name
+    FROM departments
+    WHERE department_id = employees_record.department_id;
+
+    dbms_output.put_line(employees_record.employee_id || ' ' ||
+    employees_record.first_name || ' ' || v_department_name);
+
+END;
+
+-- * IF ~ ELSE 
+DECLARE 
+ v_no NUMBER := 7;
+
+BEGIN
+ -- 단수 IF ~ END IF
+ IF v_no = 7 THEN 
+    dbms_output.put_line('7입니다.');
+ END IF;
+
+ IF v_no = 5 THEN
+    dbms_output.put_line('5입니다.');
+ ELSE 
+    dbms_output.put_line('7입니다.');
+ END IF;
+
+ IF v_no = 5 THEN
+    dbms_output.put_line('5입니다.');
+ ELSIF v_no = 6 THEN
+    dbms_output.put_line('6입니다.');
+ ELSE      
+    dbms_output.put_line('7입니다.');
+ END IF;
+
+END;
+
+-- ** 반복문
+
+-- * LOOP 문
+
+DECLARE
+ i NUMBER := 0;
+
+BEGIN
+ LOOP
+    i := i + 1;
+    -- 조건
+    EXIT WHEN i > 10;
+    dbms_output.put_line(i);
+
+ END LOOP;
+END;
+
+-- * WHILE
+
+DECLARE
+ i NUMBER := 0;
+
+BEGIN
+ WHILE i < 10 LOOP
+    i := i + 1;
+    dbms_output.put_line(i);
+ END LOOP;
+END;
+
+-- * FOR문
+DECLARE
+ i NUMBER := 0;
+
+BEGIN
+ FOR i IN 1..10 LOOP
+    dbms_output.put_line(i);
+ END LOOP;
+END;
+
+-- <mission> LOOP => 3단 출력
+--           FOR => 구구단 전체
+
+DECLARE 
+ i NUMBER := 1;
+
+BEGIN
+ LOOP
+
+   dbms_output.put_line('3 * '|| i || ' = '|| i*3);
+   i := i+1;
+   EXIT WHEN i = 9 ; -- 비교할 때에는 그냥 equal 연산자 사용
+ END LOOP;
+END; 
+
+DECLARE
+
+BEGIN
+ FOR j IN 1..9 LOOP
+    FOR i IN 1..9 LOOP
+        dbms_output.put_line(j || ' * ' || i || ' = ' || i*j);
+    END LOOP;    
+    dbms_output.put_line(''); -- 아무것도 없이 put_line 처리문을 사용할 수 없다.
+ END LOOP;
+END; 
