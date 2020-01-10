@@ -1,0 +1,17 @@
+ ** PL / SQL **
+  - output 에서 출력하기 위해 set serveroutput on; => 설정
+
+  DECLARE
+   -- 변수 선언
+   v_no NUMBER(3) := 10;
+   v_hireDate VARCHAR2(30) := TO_CHAR(SYSDATE, 'YYYY/MM/DD'); 
+   -- 상수 선언
+   c_message CONSTANT VARCHAR2(50) := '안녕하세요. PL/SQL';
+   
+   -- 실행부
+   BEGIN
+    --DBMS_OUTPUT 패키지명의 PUT_LINE 프로시저를 이용하여 결과 출력
+    dbms_output.put_line('오늘은 PL/SQL 시작');
+    dbms_output.put_line(c_message);
+    dbms_output.put_line(v_hireDate);
+    END;

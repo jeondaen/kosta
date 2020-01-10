@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - kosta_gallerg",
+            "request": "launch",
+            "mainClass": "kosta_gallerg",
+            "projectName": "VSCode_Workspace_6d451b29"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
